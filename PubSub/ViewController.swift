@@ -36,19 +36,20 @@ class ViewController: UIViewController {
                     
                         let dataString = NSString(data: unwrappedData, encoding: String.Encoding.utf8.rawValue)
                         
-                        var stringSeparator = "Whole"
+                        var stringSeparator1 = "Whole"
+//                      var stringSeparator2 = "ellipsis_text\">"
                         
-                        if let contentArray = dataString?.components(separatedBy: stringSeparator) {
+                        if let contentArray = dataString?.components(separatedBy: stringSeparator1) {
                             
                             if contentArray.count > 1 {
                                 
-                                stringSeparator = "title="
+                                stringSeparator1 = "tran"
                                 
-                                let newContentArray = contentArray[1].components(separatedBy: stringSeparator)
+                                let newContentArray = contentArray[1].components(separatedBy: stringSeparator1)
                                 
                                 if newContentArray.count > 1 {
                                     
-                                    message = newContentArray[0].replacingOccurrences(of: "&deg;", with: "°")
+                                    message = newContentArray[0]
                                     
                                     print(message)
                                 }
