@@ -9,7 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var resultsLabel: UILabel!
+    
     @IBOutlet var webView: UIWebView!
     
     override func viewDidLoad() {
@@ -23,6 +25,8 @@ class ViewController: UIViewController {
             let task = URLSession.shared.dataTask(with: request as URLRequest){
                 data, response, error in
                 
+                   var message = ""
+                
                 if error != nil{
                     print(error!)
                     //add code to display error to user even though we shouldnt have an error
@@ -32,19 +36,56 @@ class ViewController: UIViewController {
                     
                         let dataString = NSString(data: unwrappedData, encoding: String.Encoding.utf8.rawValue)
                         
-                        print(dataString!)
+                        var stringSeparator = "Whole"
                         
+                        if let contentArray = dataString?.components(separatedBy: stringSeparator) {
+                            
+                            if contentArray.count > 1 {
+                                
+                                stringSeparator = "title="
+                                
+                                let newContentArray = contentArray[1].components(separatedBy: stringSeparator)
+                                
+                                if newContentArray.count > 1 {
+                                    
+                                    message = newContentArray[0].replacingOccurrences(of: "&deg;", with: "°")
+                                    
+                                    print(message)
+                                }
+                                
+                                
+                            }
+                            
                         }
-                    
+                        
                     }
                     
+                    
                 }
-            
-                task.resume()
-            
+                
+                if message == "" {
+                    
+                    message = "The sub couldn't be found. Please try again."
+                    
+                }
+                
+                DispatchQueue.main.sync(execute: {
+                    
+                    self.resultsLabel.text = message
+                    
+                })
+                
             }
             
+            task.resume()
+            
+        } else {
+            
+            resultsLabel.text = "The sub couldn't be found. Please try again."
+            
         }
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
