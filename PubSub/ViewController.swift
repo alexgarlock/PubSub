@@ -24,7 +24,7 @@ class ViewController: UIViewController {
                 data, response, error in
                 
                 if error != nil{
-                    print(error)
+                    print(error!)
                     //add code to display error to user even though we shouldnt have an error
                 }else{
                     
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
                     
                         let dataString = NSString(data: unwrappedData, encoding: String.Encoding.utf8.rawValue)
                         
-                        print(dataString)
+                        print(dataString!)
                         
                         }
                     
