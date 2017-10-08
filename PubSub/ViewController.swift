@@ -95,32 +95,22 @@ class ViewController: UIViewController {
                                                 if newContentDealArray2.count > 1 {
                                         
                                                     let newContentDealArray3 = newContentDealArray2[1].components(separatedBy: stringSpan)
-
                                                     
                                                     let stringDeal = NSString(string: newContentDealArray3[0])
                                         
                                                     messageSubDeal = stringDeal as String
 
+                                                }
                                         }
-                                    
-                                    }
-                                
                                 }
-                        
-                             }
-                            
+                            }
                         }
-                        
                     }
-                    
                 }
-                
                 if message == "" {
                     
                     message = "The sub couldn't be found. 1"
-                    
                 }
-                
                 DispatchQueue.main.sync(execute: {
                     
                     self.resultsLabel.text = message + "Whole Sub"
@@ -130,17 +120,11 @@ class ViewController: UIViewController {
                     self.dealLabel.text = messageSubDeal
                     
                 })
-                
             }
-            
             task.resume()
-            
         } else {
-            
             resultsLabel.text = "The sub couldn't be found. 2"
-            
         }
-
     }
 
     override func didReceiveMemoryWarning() {
