@@ -61,9 +61,7 @@ class ViewController: UIViewController {
                                 if newContentArray.count > 1 {
                                     
                                     message = newContentArray[1]
-                                    
-                                    print(message)
-                                    
+                            
                                 }
                              
 //  Find Sub Price
