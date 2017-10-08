@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var resultsLabel: UILabel!
     
+    @IBOutlet weak var priceLabel: UILabel!
+    
     @IBOutlet var webView: UIWebView!
     
     override func viewDidLoad() {
@@ -26,6 +28,7 @@ class ViewController: UIViewController {
                 data, response, error in
                 
                    var message = ""
+                   var messageSubPrice = ""
                 
                 if error != nil{
                     print(error!)
@@ -41,6 +44,10 @@ class ViewController: UIViewController {
                         if let contentArray = dataString?.components(separatedBy: stringSeparatorSub) {
                             
                             if contentArray.count > 1 {
+                            
+                                //Find Sub on Sale
+                                
+                                //print(contentArray[2])
                                 
                                 stringSeparatorSub = "Publix"
                                 
@@ -50,10 +57,31 @@ class ViewController: UIViewController {
                                     
                                     message = newContentArray[1]
                                     
-                                    print(message)
+                                    //print(message)
+                                    
                                 }
+                             
+                                //Find Sub Price
+
+                                // I started here so we didnt have to reload the content Array.
                                 
                                 
+                                let stringSeparatorSubPrice = "ellipsis_text\">"
+                                
+                                if contentArray.count > 1 {
+                                    
+                                    let newContentPriceArray = contentArray[2].components(separatedBy: stringSeparatorSubPrice)
+                                    
+                                    if newContentPriceArray.count > 1 {
+                                        
+                                        let stringPrice = NSString(string: newContentPriceArray[1])
+
+                                        messageSubPrice = stringPrice.substring(to: 4)
+                                        
+                                        print(messageSubPrice)
+                                        
+                                    }
+                                }
                             }
                             
                         }
@@ -73,6 +101,8 @@ class ViewController: UIViewController {
                     
                     self.resultsLabel.text = message + "Whole Sub"
                     
+                    self.priceLabel.text = "$" + messageSubPrice
+                    
                 })
                 
             }
@@ -85,8 +115,6 @@ class ViewController: UIViewController {
             
         }
 
-        //start here Steve
-        
     }
 
     override func didReceiveMemoryWarning() {
