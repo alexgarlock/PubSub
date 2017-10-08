@@ -27,7 +27,7 @@ class ViewController: UIViewController {
             
             let task = URLSession.shared.dataTask(with: request as URLRequest){
                 data, response, error in
-                
+//   Start message as empty
                    var message = ""
                    var messageSubPrice = ""
                    var messageSubDeal = ""
