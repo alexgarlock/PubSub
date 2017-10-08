@@ -63,10 +63,6 @@ class ViewController: UIViewController {
                                 }
                              
 //  Find Sub Price
-
-                                // I started here so we didnt have to reload the content Array.
-                                
-                                
                                 let stringSeparatorEllipsisText = "ellipsis_text\">"
                                 
                                 if contentArray.count > 1 {
@@ -81,7 +77,7 @@ class ViewController: UIViewController {
                                         
                                     }
                                 }
-                                
+// Find Sub savings amount
                                 let stringSeparatorSubDeal = "priceQualifier"
                                 
                                 let stringSpan = "</span>"
@@ -102,9 +98,7 @@ class ViewController: UIViewController {
                                                     let stringDeal = NSString(string: newContentDealArray3[0])
                                         
                                                     messageSubDeal = stringDeal as String
-                                        
-                                                    print(messageSubDeal)
-                                        
+
                                         }
                                     
                                     }
