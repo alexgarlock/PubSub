@@ -65,67 +65,67 @@ class ViewController: UIViewController {
                                 }
                              
 //  Find Sub Price
-                                let stringSeparatorEllipsisText = "ellipsis_text\">"
+                        let stringSeparatorEllipsisText = "ellipsis_text\">"
                                 
-                                if contentArray.count > 1 {
+                            if contentArray.count > 1 {
                                     
-                                    let newContentPriceArray = contentArray[2].components(separatedBy: stringSeparatorEllipsisText)
+                                let newContentPriceArray = contentArray[2].components(separatedBy: stringSeparatorEllipsisText)
                                     
-                                    if newContentPriceArray.count > 1 {
+                                if newContentPriceArray.count > 1 {
                                         
-                                        let stringPrice = NSString(string: newContentPriceArray[1])
+                                    let stringPrice = NSString(string: newContentPriceArray[1])
 
-                                        messageSubPrice = stringPrice.substring(to: 4)
+                                    messageSubPrice = stringPrice.substring(to: 4)
                                         
-                                    }
                                 }
+                            }
 // Find Sub savings amount
-                                let stringSeparatorSubDeal = "priceQualifier"
+                        let stringSeparatorSubDeal = "priceQualifier"
                                 
-                                let stringSpan = "</span>"
+                        let stringSpan = "</span>"
                                 
                                 if contentArray.count > 1 {
                                     
-                                    let newContentDealArray1 = contentArray[2].components(separatedBy: stringSeparatorSubDeal)
+                                let newContentDealArray1 = contentArray[2].components(separatedBy: stringSeparatorSubDeal)
                                     
-                                        if newContentDealArray1.count > 1 {
+                                    if newContentDealArray1.count > 1 {
                                             
-                                            let newContentDealArray2 = newContentDealArray1[1].components(separatedBy: stringSeparatorEllipsisText)
+                                    let newContentDealArray2 = newContentDealArray1[1].components(separatedBy: stringSeparatorEllipsisText)
                                         
-                                                if newContentDealArray2.count > 1 {
+                                        if newContentDealArray2.count > 1 {
                                         
-                                                    let newContentDealArray3 = newContentDealArray2[1].components(separatedBy: stringSpan)
+                                            let newContentDealArray3 = newContentDealArray2[1].components(separatedBy: stringSpan)
                                                     
-                                                    let stringDeal = NSString(string: newContentDealArray3[0])
+                                            let stringDeal = NSString(string: newContentDealArray3[0])
                                         
-                                                    messageSubDeal = stringDeal as String
+                                            messageSubDeal = stringDeal as String
 
-                                                }
                                         }
+                                    }
                                 }
                             }
                         }
                     }
                 }
-                if message == "" {
+        if message == "" {
                     
-                    message = "The sub couldn't be found. 1"
+            message = "The sub couldn't be found. 1"
                 }
-                DispatchQueue.main.sync(execute: {
+        DispatchQueue.main.sync(execute: {
                     
-                    self.resultsLabel.text = message + "Whole Sub"
+            self.resultsLabel.text = message + "Whole Sub"
                     
-                    self.priceLabel.text = "$" + messageSubPrice
+            self.priceLabel.text = "$" + messageSubPrice
                     
-                    self.dealLabel.text = messageSubDeal
+            self.dealLabel.text = messageSubDeal
                     
-                })
+        })
             }
-            task.resume()
-        } else {
+    task.resume()
+            } else {
             resultsLabel.text = "The sub couldn't be found. 2"
-        }
-    }
+            }
+}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
