@@ -110,16 +110,16 @@ class ViewController: UIViewController {
         if message == "" {
                     
             message = "The sub couldn't be found. 1"
-                }
-        DispatchQueue.main.sync(execute: {
+        }
+                DispatchQueue.main.sync(execute: {
                     
-            self.resultsLabel.text = message + "Whole Sub"
+                    self.resultsLabel.text = message + "Whole Sub"
                     
-            self.priceLabel.text = "$" + messageSubPrice
+                    self.priceLabel.text = "$" + messageSubPrice
                     
-            self.dealLabel.text = messageSubDeal
+                    self.dealLabel.text = messageSubDeal
                     
-        })
+                })
             }
     task.resume()
             } else {
