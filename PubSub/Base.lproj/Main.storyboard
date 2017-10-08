@@ -48,11 +48,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How much you save" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLj-2r-Ag0">
+                                <rect key="frame" x="111" y="445" width="153" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="dealLabel" destination="nLj-2r-Ag0" id="dTm-gI-ZYj"/>
                         <outlet property="priceLabel" destination="G5k-XA-GZW" id="KDt-cP-Eei"/>
                         <outlet property="resultsLabel" destination="qSg-ac-xvA" id="e2A-e6-IpW"/>
                         <outlet property="webView" destination="tOs-CW-MXA" id="Btj-3V-XqC"/>

@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var priceLabel: UILabel!
     
+    @IBOutlet weak var dealLabel: UILabel!
+    
     @IBOutlet var webView: UIWebView!
     
     override func viewDidLoad() {
@@ -29,6 +31,7 @@ class ViewController: UIViewController {
                 
                    var message = ""
                    var messageSubPrice = ""
+                   var messageSubDeal = ""
                 
                 if error != nil{
                     print(error!)
@@ -57,7 +60,7 @@ class ViewController: UIViewController {
                                     
                                     message = newContentArray[1]
                                     
-                                    //print(message)
+                                    print(message)
                                     
                                 }
                              
@@ -66,11 +69,11 @@ class ViewController: UIViewController {
                                 // I started here so we didnt have to reload the content Array.
                                 
                                 
-                                let stringSeparatorSubPrice = "ellipsis_text\">"
+                                let stringSeparatorEllipsisText = "ellipsis_text\">"
                                 
                                 if contentArray.count > 1 {
                                     
-                                    let newContentPriceArray = contentArray[2].components(separatedBy: stringSeparatorSubPrice)
+                                    let newContentPriceArray = contentArray[2].components(separatedBy: stringSeparatorEllipsisText)
                                     
                                     if newContentPriceArray.count > 1 {
                                         
@@ -82,12 +85,41 @@ class ViewController: UIViewController {
                                         
                                     }
                                 }
-                            }
+                                
+                                let stringSeparatorSubDeal = "priceQualifier"
+                                
+                                let stringSpan = "</span>"
+                                
+                                if contentArray.count > 1 {
+                                    
+                                    let newContentDealArray1 = contentArray[2].components(separatedBy: stringSeparatorSubDeal)
+                                    
+                                        if newContentDealArray1.count > 1 {
+                                            
+                                            let newContentDealArray2 = newContentDealArray1[1].components(separatedBy: stringSeparatorEllipsisText)
+                                        
+                                                if newContentDealArray2.count > 1 {
+                                        
+                                                    let newContentDealArray3 = newContentDealArray2[1].components(separatedBy: stringSpan)
+
+                                                    
+                                                    let stringDeal = NSString(string: newContentDealArray3[0])
+                                        
+                                                    messageSubDeal = stringDeal as String
+                                        
+                                                    print(messageSubDeal)
+                                        
+                                        }
+                                    
+                                    }
+                                
+                                }
+                        
+                             }
                             
                         }
                         
                     }
-                    
                     
                 }
                 
@@ -102,6 +134,8 @@ class ViewController: UIViewController {
                     self.resultsLabel.text = message + "Whole Sub"
                     
                     self.priceLabel.text = "$" + messageSubPrice
+                    
+                    self.dealLabel.text = messageSubDeal
                     
                 })
                 
