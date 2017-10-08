@@ -5,8 +5,6 @@
 //  Created by SA Studios on 10/3/17.
 //  Copyright © 2017. All rights reserved.
 //
-//Test AG
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -36,7 +34,13 @@ class ViewController: UIViewController {
                 
                 if error != nil{
                     print(error!)
-//  add code to display error to user even though we shouldnt have an error
+                    
+//  added code to display error to user if we cannot load website or website has changed
+                    
+                    let alert = UIAlertController(title: "Pub Sub Error", message: "We are having a hard time load. Please try again.", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    
                 }else{
                     
                     if let unwrappedData = data {
