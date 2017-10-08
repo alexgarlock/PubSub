@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var dealLabel: UILabel!
     
+    @IBOutlet weak var dateRangeLabel: UILabel!
+    
     @IBOutlet var webView: UIWebView!
     
     override func viewDidLoad() {
@@ -31,6 +33,7 @@ class ViewController: UIViewController {
                    var message = ""
                    var messageSubPrice = ""
                    var messageSubDeal = ""
+                   var messageDealDate = ""
                 
                 if error != nil{
                     print(error!)
@@ -82,7 +85,7 @@ class ViewController: UIViewController {
 // Find Sub savings amount
                         let stringSeparatorSubDeal = "priceQualifier"
                                 
-                        let stringSpan = "</span>"
+                        let stringSpanEnd = "</span>"
                                 
                                 if contentArray.count > 1 {
                                     
@@ -94,19 +97,35 @@ class ViewController: UIViewController {
                                         
                                         if newContentDealArray2.count > 1 {
                                         
-                                            let newContentDealArray3 = newContentDealArray2[1].components(separatedBy: stringSpan)
+                                            let newContentDealArray3 = newContentDealArray2[1].components(separatedBy: stringSpanEnd)
                                                     
                                             let stringDeal = NSString(string: newContentDealArray3[0])
                                         
                                             messageSubDeal = stringDeal as String
+                                            
+//Find Length of Deal
+                                            let stringSpanStart = "<span>"
+                                            
+                                            let newContentDatesArray = newContentDealArray3[1].components(separatedBy: stringSpanStart)
+                                            
+                                            let stringDate = NSString(string: newContentDatesArray[1])
 
+                                            messageDealDate = stringDate as String
+                                            
                                         }
+                                        
                                     }
+                                    
                                 }
+                                
                             }
+                            
                         }
+                        
                     }
+                    
                 }
+                
         if message == "" {
                     
             message = "The sub couldn't be found. 1"
@@ -118,6 +137,8 @@ class ViewController: UIViewController {
                     self.priceLabel.text = "$" + messageSubPrice
                     
                     self.dealLabel.text = messageSubDeal
+                    
+                    self.dateRangeLabel.text = messageDealDate
                     
                 })
             }
