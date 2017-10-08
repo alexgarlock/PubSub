@@ -36,20 +36,19 @@ class ViewController: UIViewController {
                     
                         let dataString = NSString(data: unwrappedData, encoding: String.Encoding.utf8.rawValue)
                         
-                        var stringSeparator1 = "Whole"
-//                      var stringSeparator2 = "ellipsis_text\">"
+                        var stringSeparatorSub = "Whole Sub"
                         
-                        if let contentArray = dataString?.components(separatedBy: stringSeparator1) {
+                        if let contentArray = dataString?.components(separatedBy: stringSeparatorSub) {
                             
                             if contentArray.count > 1 {
                                 
-                                stringSeparator1 = "tran"
+                                stringSeparatorSub = "Publix"
                                 
-                                let newContentArray = contentArray[1].components(separatedBy: stringSeparator1)
+                                let newContentArray = contentArray[1].components(separatedBy: stringSeparatorSub)
                                 
                                 if newContentArray.count > 1 {
                                     
-                                    message = newContentArray[0]
+                                    message = newContentArray[1]
                                     
                                     print(message)
                                 }
@@ -66,13 +65,13 @@ class ViewController: UIViewController {
                 
                 if message == "" {
                     
-                    message = "The sub couldn't be found. Please try again."
+                    message = "The sub couldn't be found. 1"
                     
                 }
                 
                 DispatchQueue.main.sync(execute: {
                     
-                    self.resultsLabel.text = message
+                    self.resultsLabel.text = message + "Whole Sub"
                     
                 })
                 
@@ -82,7 +81,7 @@ class ViewController: UIViewController {
             
         } else {
             
-            resultsLabel.text = "The sub couldn't be found. Please try again."
+            resultsLabel.text = "The sub couldn't be found. 2"
             
         }
         
