@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//         Do any additional setup after loading the view, typically from a nib.
+//    Do any additional setup after loading the view, typically from a nib.
         
         if let urlPrimary = URL(string: "http://weeklyad.publix.com/PublixAccessibility/BrowseByListing/ByCategory/?ListingSort=8&StoreID=2650275&CategoryID=5117860"){
             
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
                 
                 if error != nil{
                     print(error!)
-//                    add code to display error to user even though we shouldnt have an error
+//  add code to display error to user even though we shouldnt have an error
                 }else{
                     
                     if let unwrappedData = data {
