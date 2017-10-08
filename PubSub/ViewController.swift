@@ -70,8 +70,6 @@ class ViewController: UIViewController {
 
                                         messageSubPrice = stringPrice.substring(to: 4)
                                         
-                                        print(messageSubPrice)
-                                        
                                     }
                                 }
                             }
