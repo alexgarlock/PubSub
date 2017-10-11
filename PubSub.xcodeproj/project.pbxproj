@@ -13,6 +13,7 @@
 		CE8D219D1F843DB10086F021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8D219C1F843DB10086F021 /* Assets.xcassets */; };
 		CE8D21A01F843DB10086F021 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8D219E1F843DB10086F021 /* LaunchScreen.storyboard */; };
 		E05334911F8B0FBD00FE9500 /* sub.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E05334901F8B0FBA00FE9500 /* sub.jpg */; };
+		E05335431F8E348B00FE9500 /* PubSub_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E05335421F8E348600FE9500 /* PubSub_Logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		E05335211F8D957D00FE9500 /* Icon-App-29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-29x29@2x.png"; sourceTree = "<group>"; };
 		E05335231F8D957D00FE9500 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		E05335241F8D957D00FE9500 /* iTunesArtwork@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@3x.png"; sourceTree = "<group>"; };
+		E05335421F8E348600FE9500 /* PubSub_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PubSub_Logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				CE8D219E1F843DB10086F021 /* LaunchScreen.storyboard */,
 				CE8D21A11F843DB10086F021 /* Info.plist */,
 				E05334901F8B0FBA00FE9500 /* sub.jpg */,
+				E05335421F8E348600FE9500 /* PubSub_Logo.png */,
 				E05335061F8D957D00FE9500 /* PS_icons */,
 			);
 			path = PubSub;
@@ -206,6 +209,7 @@
 			files = (
 				E05334911F8B0FBD00FE9500 /* sub.jpg in Resources */,
 				CE8D21A01F843DB10086F021 /* LaunchScreen.storyboard in Resources */,
+				E05335431F8E348B00FE9500 /* PubSub_Logo.png in Resources */,
 				CE8D219D1F843DB10086F021 /* Assets.xcassets in Resources */,
 				CE8D219B1F843DB10086F021 /* Main.storyboard in Resources */,
 			);
@@ -360,6 +364,7 @@
 				DEVELOPMENT_TEAM = J8CLN6K4CY;
 				INFOPLIST_FILE = PubSub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = PubSub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -375,6 +380,7 @@
 				DEVELOPMENT_TEAM = J8CLN6K4CY;
 				INFOPLIST_FILE = PubSub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = PubSub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
