@@ -19,13 +19,25 @@ class ViewController: UIViewController {
     
     @IBOutlet var webView: UIWebView!
     
-    @IBOutlet weak var OrderNow: UILabel! 
+//  Added Order now button
+    @IBAction func OrderNow(_ sender: Any) {
+        let OrderNowURL = URL(string: "http://www.publix.com/product-catalog/productlisting?ch=18.2.1.&page=1&oeo=true")
+        UIApplication.shared.open(OrderNowURL!, options: [:], completionHandler: nil)
+        print("Button Clicked")
+    }
+    
+//  Added remove status bar
+    override var prefersStatusBarHidden: Bool {
+        get {
+            return true
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //    Do any additional setup after loading the view, typically from a nib.
         
-        
+// Setting up of the Sub we need to copy.
         if let urlPrimary = URL(string: "http://weeklyad.publix.com/PublixAccessibility/BrowseByListing/ByCategory/?ListingSort=8&StoreID=2650275&CategoryID=5117860"){
             
             let request = NSMutableURLRequest(url: urlPrimary)

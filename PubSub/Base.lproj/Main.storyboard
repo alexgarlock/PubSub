@@ -67,30 +67,21 @@
                                 <rect key="frame" x="93" y="30" width="189" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MS0-gm-yap">
-                                <rect key="frame" x="142" y="591" width="109" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" link="YES" staticText="YES"/>
-                                </accessibility>
-                                <attributedString key="attributedText">
-                                    <fragment content="Order Now!">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="0.98861340763294359" blue="0.97308325638238857" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <font key="NSFont" metaFont="system" size="20"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIn-hK-dLE">
+                                <rect key="frame" x="126" y="555" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="Order Now"/>
+                                <connections>
+                                    <action selector="OrderNow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BMm-T0-LD2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="OrderNow" destination="MS0-gm-yap" id="PVl-mE-Fq5"/>
                         <outlet property="dateRangeLabel" destination="U4h-Oa-tt7" id="LJ8-WQ-pFa"/>
                         <outlet property="dealLabel" destination="nLj-2r-Ag0" id="dTm-gI-ZYj"/>
                         <outlet property="priceLabel" destination="G5k-XA-GZW" id="KDt-cP-Eei"/>
