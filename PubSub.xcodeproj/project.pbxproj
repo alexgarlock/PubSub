@@ -13,7 +13,7 @@
 		CE8D219D1F843DB10086F021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8D219C1F843DB10086F021 /* Assets.xcassets */; };
 		CE8D21A01F843DB10086F021 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8D219E1F843DB10086F021 /* LaunchScreen.storyboard */; };
 		E05335431F8E348B00FE9500 /* PubSub_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E05335421F8E348600FE9500 /* PubSub_Logo.png */; };
-		E08BD5F51F90E95F000DDB6F /* PS_Wall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E08BD5F41F90E95D000DDB6F /* PS_Wall.jpg */; };
+		E08BD5F71F92E68C000DDB6F /* PS_Wall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E08BD5F61F92E68A000DDB6F /* PS_Wall.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +52,7 @@
 		E05335231F8D957D00FE9500 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		E05335241F8D957D00FE9500 /* iTunesArtwork@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@3x.png"; sourceTree = "<group>"; };
 		E05335421F8E348600FE9500 /* PubSub_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PubSub_Logo.png; sourceTree = "<group>"; };
-		E08BD5F41F90E95D000DDB6F /* PS_Wall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PS_Wall.jpg; sourceTree = "<group>"; };
+		E08BD5F61F92E68A000DDB6F /* PS_Wall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PS_Wall.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +91,8 @@
 				CE8D219C1F843DB10086F021 /* Assets.xcassets */,
 				CE8D219E1F843DB10086F021 /* LaunchScreen.storyboard */,
 				CE8D21A11F843DB10086F021 /* Info.plist */,
-				E08BD5F41F90E95D000DDB6F /* PS_Wall.jpg */,
 				E05335421F8E348600FE9500 /* PubSub_Logo.png */,
+				E08BD5F61F92E68A000DDB6F /* PS_Wall.jpg */,
 				E05335061F8D957D00FE9500 /* PS_icons */,
 			);
 			path = PubSub;
@@ -211,7 +211,7 @@
 				E05335431F8E348B00FE9500 /* PubSub_Logo.png in Resources */,
 				CE8D219D1F843DB10086F021 /* Assets.xcassets in Resources */,
 				CE8D219B1F843DB10086F021 /* Main.storyboard in Resources */,
-				E08BD5F51F90E95F000DDB6F /* PS_Wall.jpg in Resources */,
+				E08BD5F71F92E68C000DDB6F /* PS_Wall.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

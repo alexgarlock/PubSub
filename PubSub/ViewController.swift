@@ -19,9 +19,12 @@ class ViewController: UIViewController {
     
     @IBOutlet var webView: UIWebView!
     
+    @IBOutlet weak var OrderNow: UILabel! 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //    Do any additional setup after loading the view, typically from a nib.
+        
         
         if let urlPrimary = URL(string: "http://weeklyad.publix.com/PublixAccessibility/BrowseByListing/ByCategory/?ListingSort=8&StoreID=2650275&CategoryID=5117860"){
             
