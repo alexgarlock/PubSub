@@ -35,6 +35,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UNService.shared.authorize()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleAction(_:)),
+                                               name: NSNotification.Name("internalNotification.handleAction"),
+                                               object: nil)
+        
 //    Do any additional setup after loading the view, typically from a nib.
         
 // Setting up of the Sub we need to copy.
@@ -168,6 +176,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @objc
+    func handleAction(_ sender: Notification) {
+        guard let action = sender.object as? NotificationActionID else { return }
+        switch action {
+        case .timer: print("timer logic")
+        case .date: print("date logic")
+        }
+    }
 }
 

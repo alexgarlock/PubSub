@@ -12,6 +12,11 @@
 		CE8D219B1F843DB10086F021 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8D21991F843DB10086F021 /* Main.storyboard */; };
 		CE8D219D1F843DB10086F021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8D219C1F843DB10086F021 /* Assets.xcassets */; };
 		CE8D21A01F843DB10086F021 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8D219E1F843DB10086F021 /* LaunchScreen.storyboard */; };
+		E0134E721F9C186400D6AAF5 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0134E6F1F9C186400D6AAF5 /* AlertService.swift */; };
+		E0134E731F9C186400D6AAF5 /* UNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0134E701F9C186400D6AAF5 /* UNService.swift */; };
+		E0134E781F9C1A5600D6AAF5 /* NotificationAttachmentID.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0134E751F9C1A5600D6AAF5 /* NotificationAttachmentID.swift */; };
+		E0134E791F9C1A5600D6AAF5 /* NotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0134E761F9C1A5600D6AAF5 /* NotificationCategory.swift */; };
+		E0134E7A1F9C1A5600D6AAF5 /* NotificationActionID.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0134E771F9C1A5600D6AAF5 /* NotificationActionID.swift */; };
 		E05335431F8E348B00FE9500 /* PubSub_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E05335421F8E348600FE9500 /* PubSub_Logo.png */; };
 		E08BD5F71F92E68C000DDB6F /* PS_Wall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E08BD5F61F92E68A000DDB6F /* PS_Wall.jpg */; };
 /* End PBXBuildFile section */
@@ -24,6 +29,11 @@
 		CE8D219C1F843DB10086F021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE8D219F1F843DB10086F021 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE8D21A11F843DB10086F021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0134E6F1F9C186400D6AAF5 /* AlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		E0134E701F9C186400D6AAF5 /* UNService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNService.swift; sourceTree = "<group>"; };
+		E0134E751F9C1A5600D6AAF5 /* NotificationAttachmentID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationAttachmentID.swift; sourceTree = "<group>"; };
+		E0134E761F9C1A5600D6AAF5 /* NotificationCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCategory.swift; sourceTree = "<group>"; };
+		E0134E771F9C1A5600D6AAF5 /* NotificationActionID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationActionID.swift; sourceTree = "<group>"; };
 		E05335081F8D957D00FE9500 /* iTunesArtwork@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@1x.png"; sourceTree = "<group>"; };
 		E053350A1F8D957D00FE9500 /* Icon-App-57x57@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-57x57@1x.png"; sourceTree = "<group>"; };
 		E053350B1F8D957D00FE9500 /* Icon-App-76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-76x76@2x.png"; sourceTree = "<group>"; };
@@ -93,9 +103,30 @@
 				CE8D21A11F843DB10086F021 /* Info.plist */,
 				E05335421F8E348600FE9500 /* PubSub_Logo.png */,
 				E08BD5F61F92E68A000DDB6F /* PS_Wall.jpg */,
+				E0134E741F9C1A5600D6AAF5 /* Model */,
+				E0134E6D1F9C186400D6AAF5 /* Service */,
 				E05335061F8D957D00FE9500 /* PS_icons */,
 			);
 			path = PubSub;
+			sourceTree = "<group>";
+		};
+		E0134E6D1F9C186400D6AAF5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E0134E6F1F9C186400D6AAF5 /* AlertService.swift */,
+				E0134E701F9C186400D6AAF5 /* UNService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E0134E741F9C1A5600D6AAF5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E0134E751F9C1A5600D6AAF5 /* NotificationAttachmentID.swift */,
+				E0134E761F9C1A5600D6AAF5 /* NotificationCategory.swift */,
+				E0134E771F9C1A5600D6AAF5 /* NotificationActionID.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E05335061F8D957D00FE9500 /* PS_icons */ = {
@@ -222,8 +253,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0134E781F9C1A5600D6AAF5 /* NotificationAttachmentID.swift in Sources */,
+				E0134E791F9C1A5600D6AAF5 /* NotificationCategory.swift in Sources */,
 				CE8D21981F843DB10086F021 /* ViewController.swift in Sources */,
+				E0134E721F9C186400D6AAF5 /* AlertService.swift in Sources */,
 				CE8D21961F843DB10086F021 /* AppDelegate.swift in Sources */,
+				E0134E731F9C186400D6AAF5 /* UNService.swift in Sources */,
+				E0134E7A1F9C1A5600D6AAF5 /* NotificationActionID.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
