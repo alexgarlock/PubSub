@@ -21,7 +21,7 @@ class UNService: NSObject {
         unCenter.requestAuthorization(options: options) { (granted, error) in
             print(error ?? "No UN auth error")
             guard granted else {
-                print("USER DENIED ACCESs")
+                print("USER DENIED ACCESS")
                 return
             }
             
