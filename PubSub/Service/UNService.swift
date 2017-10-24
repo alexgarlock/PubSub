@@ -28,7 +28,9 @@ class UNService: NSObject {
             self.configure()
 //     Set the day to wendesday to notify the user about the new sub of the week.
             var components = DateComponents()
-            components.weekday = 3
+            //starts on Wedensday (= 4) and goes off at hour (=11AM)
+            components.weekday = 4
+            components.hour = 11
             UNService.shared.dateRequest(with: components)
         }
         
