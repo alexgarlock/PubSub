@@ -36,6 +36,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        
         UNService.shared.authorize()
         
         NotificationCenter.default.addObserver(self,
