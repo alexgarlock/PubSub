@@ -21,14 +21,12 @@ class UNService: NSObject {
         unCenter.requestAuthorization(options: options) { (granted, error) in
             print(error ?? "No UN auth error")
             guard granted else {
-                print("USER DENIED ACCESS")
+                print("User doesnt want notifcations")
                 return
             }
-            
             self.configure()
-//     Set the day to wendesday to notify the user about the new sub of the week.
             var components = DateComponents()
-            //starts on Wedensday (= 4) and goes off at hour (=11AM)
+// Starts on Wed (= 4) and goes off at hour (=11AM)
             components.weekday = 4
             components.hour = 11
             UNService.shared.dateRequest(with: components)
@@ -57,8 +55,8 @@ class UNService: NSObject {
     
     func dateRequest(with components: DateComponents) {
         let content = UNMutableNotificationContent()
-        content.title = "Pub Sub"
-        content.body = "It is now time for the Sub of the week at PubSub"
+        content.title = "PubSub"
+        content.body = "Check out the sub of the week with PubSub"
         content.sound = .default()
         content.badge = 1
         content.categoryIdentifier = NotificationCategory.date.rawValue

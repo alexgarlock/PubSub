@@ -35,9 +35,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//  Set the badge to reset to 0 when app is opened
         UIApplication.shared.applicationIconBadgeNumber = 0
-        
+//  User authorized the app to allow notificaitons
         UNService.shared.authorize()
         
         NotificationCenter.default.addObserver(self,
@@ -45,16 +45,14 @@ class ViewController: UIViewController {
                                                name: NSNotification.Name("internalNotification.handleAction"),
                                                object: nil)
         
-//    Do any additional setup after loading the view, typically from a nib.
-        
-// Setting up of the Sub we need to copy.
+// Setting up of the Sub loading from the website
         if let urlPrimary = URL(string: "http://weeklyad.publix.com/PublixAccessibility/BrowseByListing/ByCategory/?ListingSort=8&StoreID=2650275&CategoryID=5117860"){
             
             let request = NSMutableURLRequest(url: urlPrimary)
             
             let task = URLSession.shared.dataTask(with: request as URLRequest){
                 data, response, error in
-//   Start message as empty
+//   Start message as empty we fill this below after picking info from the website
                    var message = ""
                    var messageSubPrice = ""
                    var messageSubDeal = ""
@@ -65,8 +63,8 @@ class ViewController: UIViewController {
                     
 //  added code to display error to user if we cannot load website or website has changed
                     
-                    let alert = UIAlertController(title: "Pub Sub Error", message: "We are having a hard time load. Please try again.", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+                    let alert = UIAlertController(title: "Pub Sub Error", message: "We are having a hard time loading. Please try again.", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                     
                 }else{
@@ -76,6 +74,8 @@ class ViewController: UIViewController {
                         let dataString = NSString(data: unwrappedData, encoding: String.Encoding.utf8.rawValue)
                         
 //  Find Sub on Sale
+//
+//  Fine the word Whole sub first then work backwards to the word Publix to grab the sub of the week on their website
                         var stringSeparatorSub = "Whole Sub"
                         
                         if let contentArray = dataString?.components(separatedBy: stringSeparatorSub) {
@@ -128,7 +128,7 @@ class ViewController: UIViewController {
                                         
                                             messageSubDeal = stringDeal as String
                                             
-//Find Length of Deal
+//Find the date range of the Deal
                                             let stringSpanStart = "<span>"
                                             
                                             let newContentDatesArray = newContentDealArray3[1].components(separatedBy: stringSpanStart)
@@ -150,34 +150,32 @@ class ViewController: UIViewController {
                     }
                     
                 }
-                
+//  Error message for all if we cannot find above.
         if message == "" {
                     
-            message = "The sub couldn't be found. 1"
+            message = "The sub couldn't be found. Error 1 "
         }
                 DispatchQueue.main.sync(execute: {
                     
+//  Display the information as text so it is readable to the app
+                    
                     self.resultsLabel.text = message + "Whole Sub"
-                    
                     self.priceLabel.text = "$" + messageSubPrice
-                    
                     self.dealLabel.text = messageSubDeal
-                    
                     self.dateRangeLabel.text = messageDealDate
-                    
                 })
             }
     task.resume()
             } else {
-            resultsLabel.text = "The sub couldn't be found. 2"
+            resultsLabel.text = "The sub couldn't be found. Error 2"
             }
 }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+// Dispose of any resources that can be recreated.
     }
-
+// COMEBACK fix this we dont need the .timer in this code 
     @objc
     func handleAction(_ sender: Notification) {
         guard let action = sender.object as? NotificationActionID else { return }
