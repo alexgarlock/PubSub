@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  PubSub
 //
-//  Created by SA Studios on 10/3/17.
+//  Created by Taradine LLC on 10/3/17.
 //  Copyright © 2017. All rights reserved.
 //
 import UIKit

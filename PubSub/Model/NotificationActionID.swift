@@ -2,7 +2,7 @@
 //  NotificationActionID.swift
 //  Remind
 //
-//  Created by Alex Garlock
+//  Created by Taradine LLC
 //  Copyright © 2017 . All rights reserved.
 //
 
