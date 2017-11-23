@@ -23,7 +23,6 @@ class ViewController: UIViewController {
     @IBAction func OrderNow(_ sender: Any) {
         let OrderNowURL = URL(string: "http://www.publix.com/product-catalog/productlisting?ch=18.2.1.&page=1&oeo=true")
         UIApplication.shared.open(OrderNowURL!, options: [:], completionHandler: nil)
-        print("Button Clicked")
     }
     
 //  Added remove status bar
