@@ -174,7 +174,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
 // Dispose of any resources that can be recreated.
     }
-// COMEBACK fix this we dont need the .timer in this code 
     @objc
     func handleAction(_ sender: Notification) {
         guard let action = sender.object as? NotificationActionID else { return }
